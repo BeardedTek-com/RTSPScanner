@@ -1,6 +1,6 @@
 # RTSPScanner
 
-[![PyPI](https://img.shields.io/pypi/v/rtspscanner)](https://pypi.org/project/rtspscanner/) &nbsp; [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rtspscanner)](https://pypi.org/project/rtspscanner/) &nbsp; [![PyPI - License](https://img.shields.io/pypi/l/rtspscanner)](https://pypi.org/project/rtspscanner/)
+[![PyPI](https://img.shields.io/pypi/v/rtspscanner)](https://pypi.org/project/rtspscanner/) &nbsp; [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rtspscanner)](https://pypi.org/project/rtspscanner/) &nbsp; [![PyPI - License](https://img.shields.io/pypi/l/rtspscanner)](https://pypi.org/project/rtspscanner/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/portscanner)](https://pypi.org/project/rtspscanner/)
 
 ## Python 3 Utility to scan for RTSP Sources on a network.
 This can be used as a command line utility or as a class
