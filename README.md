@@ -15,7 +15,8 @@ A [Pull Request](https://github.com/Aperocky/PortScan/pull/1) has been submitted
 
 ## Command Line Utility Usage
 ```
-usage: rtspscanner [-h] [-w WHITESPACE] [-a ADDRESS] [-n NAME] [-p PORTS] [-c CREDS] -m MODE [-A APIADDR] [-P APIPORT] [-t APITRANSPORT] [-T TIMEOUT] [-R TIMEOUTRETRIES] [-v]
+usage: rtspscanner.py [-h] [-w WHITESPACE] [-a ADDRESS] [-n NAME] [-p PORTS] [-pp PATHS] [-c CREDS] -m MODE [-A APIADDR] [-P APIPORT] [-t APITRANSPORT] [-T TIMEOUT]
+                      [-R TIMEOUTRETRIES] [-v]
 
 Scans given ports of an IPv4 Address or an IPv4 Network for RTSP streams and adds them to rtsp-simple-server
 
@@ -27,7 +28,9 @@ options:
                         Single ipv4 address or ipv4 network in CIDR notation ex: 192.168.0.100 or 192.168.0/24
   -n NAME, --name NAME  Camera Name | only used if single address given
   -p PORTS, --ports PORTS
-                        csv format: 000,000,000
+                        csv format: 554,8554
+  -pp PATHS, --paths PATHS
+                        csv format: '/Streaming/Channels/101,/live,/live2'
   -c CREDS, --creds CREDS
                         csv formatted user:password pairs: username:password,user:pass
   -m MODE, --mode MODE  add - add cameras found / rem - remove cameras found
@@ -159,4 +162,21 @@ scanner.scan()
 
 # Print the list of cameras found as a dict
 print(scanner.scanResults)
+```
+
+## Environment variables
+Environment variables can be set for all options (useful for use inside a docker container)
+```
+RTSP_SCAN_PORTS="554,8554"
+FFMPEG_TIMEOUT=10
+FFMPEG_RETRIES=2
+RTSP_SS_ADDRESS="192.168.2.240"
+RTSP_SS_PORT=9997
+RTSP_SS_TRANSPORT="http"
+RTSP_MODE="scan"
+RTSP_VERBOSE="false"
+RTSP_WHITESPACE="-"
+RTSP_CREDS="admin:admin,user:password"
+RTSP_PATHS="/Streaming/Channels/101,/live,live2"
+RTSP_ADDRESS="192.168.2.0/24"
 ```
